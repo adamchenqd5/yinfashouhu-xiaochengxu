@@ -1,0 +1,16 @@
+const SCENES = [
+  {id:'health',name:'保健品骗局',emoji:'💊',tag:'冒充健康顾问·虚假疗效',df:'⭐ 常见',bg:'linear-gradient(135deg,#E8F5E9,#A5D6A7)',
+   tip:'真医生不会在电话里卖药！保健品不能治病。记住：凡是声称"包治百病"的产品，都是骗局。'},
+  {id:'invest',name:'投资理财骗局',emoji:'📈',tag:'高息诱惑·养老项目',df:'⭐⭐ 高危',bg:'linear-gradient(135deg,#FFF3E0,#FFCC80)',
+   tip:'任何承诺"保本高息"的投资都是骗局！年化收益超6%就要警惕。投资前一定跟子女商量。'},
+  {id:'family',name:'冒充亲友出事',emoji:'📞',tag:'紧急求助·车祸被抓',df:'⭐⭐ 高危',bg:'linear-gradient(135deg,#FFEBEE,#EF9A9A)',
+   tip:'接到"家人出事"的电话，先挂断，用自己的方式联系家人确认！真出事了不会只让你转账。'},
+  {id:'romance',name:'婚恋交友骗局',emoji:'💔',tag:'黄昏恋·杀猪盘',df:'⭐⭐⭐ 极危',bg:'linear-gradient(135deg,#FCE4EC,#F48FB1)',
+   tip:'没见过面就谈钱的都是骗子！交往中多次索要钱财，无论什么理由都要立即警惕。'},
+  {id:'police',name:'冒充公检法',emoji:'👮',tag:'涉嫌犯罪·安全账户',df:'⭐⭐⭐ 极危',bg:'linear-gradient(135deg,#E3F2FD,#90CAF9)',
+   tip:'公检法绝不会电话办案、绝不会要求转账到"安全账户"、绝不会要求你保密！直接挂断，打110核实。'},
+  {id:'lottery',name:'中奖红包骗局',emoji:'🎁',tag:'幸运抽奖·先交税后领奖',df:'⭐ 常见',bg:'linear-gradient(135deg,#FFF8E1,#FFE082)',
+   tip:'没参加过的活动不可能中奖！真正的中奖不需要先交钱。凡是要先交"税费"才能领奖的，都是诈骗。'}
+];
+
+export default SCENES;

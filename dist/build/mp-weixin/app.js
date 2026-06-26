@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("./common/vendor.js");Math;const n={onLaunch:function(){console.log("银发守护者 - App启动")},onShow:function(){console.log("App显示")},onHide:function(){console.log("App隐藏")}};function e(){return{app:o.createSSRApp(n)}}e().app.mount("#app"),exports.createApp=e;

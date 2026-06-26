@@ -1,0 +1,2 @@
+page{font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,sans-serif;-webkit-font-smoothing:antialiased;background:#ededed}button{margin:0;padding:0;background:none;border:none;outline:none}button:after{border:none}
+page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}

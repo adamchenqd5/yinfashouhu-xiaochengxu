@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>银发守护者 - 小程序下载</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, "SF Pro", sans-serif; padding: 16px; max-width: 560px; margin: 0 auto; background: #f0f2f5; color: #222; -webkit-text-size-adjust: 100%; }
+h1 { font-size: 22px; color: #07C160; text-align: center; }
+.card { background: #fff; border-radius: 12px; padding: 18px; margin: 14px 0; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+.btn { display: block; width: 100%; padding: 15px; background: linear-gradient(135deg,#07C160,#05a54c); color: #fff !important; border: none; border-radius: 10px; font-size: 17px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin: 10px 0; -webkit-tap-highlight-color: transparent; }
+.btn:active { opacity: 0.8; transform: scale(0.98); }
+.btn.loading { opacity: 0.7; pointer-events: none; }
+.step { display: flex; align-items: flex-start; gap: 8px; padding: 10px 12px; margin: 8px 0; background: #f6ffed; border-radius: 8px; font-size: 13.5px; line-height: 1.5; border-left: 3px solid #52c41a; }
+.step .num { flex-shrink: 0; width: 20px; height: 20px; line-height: 20px; text-align: center; background: #07C160; color: #fff; border-radius: 50%; font-size: 11px; font-weight: bold; }
+code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 13px; word-break: break-all; color: #d63384; }
+#status { text-align: center; font-size: 13px; color: #888; margin-top: 8px; min-height: 18px; }
+.progress { width: 100%; height: 4px; background: #e8e8e8; border-radius: 2px; overflow: hidden; margin-top: 8px; display: none; }
+.progress-bar { height: 100%; background: #07C160; transition: width 0.3s; width: 0%; }
+.warn-box { background: #fff7e6; border-left: 3px solid #faad14; padding: 12px; border-radius: 8px; font-size: 13px; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<h1>🛡️ 银发守护者</h1>
+
+<div class="card">
+  <p style="font-weight:600;font-size:15px;">📦 微信小程序源码包</p>
+  <p style="color:#666;font-size:13px;margin-top:4px;">文件大小：64 KB | 包含全部编译后的源文件</p>
+  <button class="btn" id="dlBtn" onclick="downloadZip()">📥 点击下载小程序 ZIP 文件</button>
+  <div class="progress" id="prog"><div class="progress-bar" id="pbar"></div></div>
+  <p id="status"></p>
+</div>
+
+<div class="card">
+  <p style="font-weight:600;font-size:15px;margin-bottom:10px;">💻 电脑上操作步骤：</p>
+  <div class="step"><span class="num">1</span><span>下载此 ZIP 并解压，打开 <b>mp-weixin</b> 文件夹</span></div>
+  <div class="step"><span class="num">2</span><span>打开「微信开发者工具」→ 导入项目</span></div>
+  <div class="step"><span class="num">3</span><span>AppID 填入：<code>wx12caf2c75b485ad2</code></span></div>
+  <div class="step"><span class="num">4</span><span>点右上角「上传」，微信扫码登录即可提交审核</span></div>
+</div>
+
+<div class="warn-box">
+  ⚠️ <b>注意：</b>微信开发者工具只有 Windows / Mac 版本，手机上无法上传小程序。请用电脑完成后续步骤。
+</div>
+
+<script>
+function downloadZip() {
+  var btn = document.getElementById('dlBtn');
+  var st = document.getElementById('status');
+  var prog = document.getElementById('prog');
+  var pbar = document.getElementById('pbar');
+
+  if (btn.classList.contains('loading')) return;
+  btn.classList.add('loading');
+  btn.textContent = '⏳ 正在准备下载...';
+  st.textContent = '';
+  prog.style.display = 'block';
+
+  // Use current page's origin to load the zip
+  var url = location.pathname.replace(/\/[^/]*$/, '/') + encodeURIComponent('银发守护者-小程序.zip');
+
+  fetch(url)
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      var total = parseInt(r.headers.get('Content-Length')) || 65000;
+      var loaded = 0;
+      var reader = r.body.getReader();
+
+      return new ReadableStream({
+        start: function() {},
+        pull: function(controller) {
+          return reader.read().then(function(res) {
+            if (res.done) { controller.close(); return; }
+            loaded += res.value.length;
+            var pct = Math.round((loaded / total) * 100);
+            pbar.style.width = pct + '%';
+            st.textContent = '已下载 ' + Math.round(loaded/1024) + 'KB / ' + Math.round(total/1024) + 'KB';
+            controller.enqueue(res.value);
+          });
+        }
+      });
+    })
+    .then(function(stream) {
+      return new Response(stream).blob();
+    })
+    .then(function(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = '\u94F6\u53D1\u5B88\u62A4\u8005-\u5C0F\u7A0B\u5E8F.zip';  // 银发守护者-小程序.zip
+      a.click();
+      URL.revokeObjectURL(a.href);
+
+      pbar.style.width = '100%';
+      btn.classList.remove('loading');
+      btn.textContent = '✅ 下载成功！如未自动保存请检查下载夹';
+      st.textContent = '✅ 文件已准备就绪（' + Math.round(blob.size/1024) + ' KB）';
+    })
+    .catch(function(err) {
+      btn.classList.remove('loading');
+      btn.textContent = '📥 点击重试下载小程序 ZIP 文件';
+      st.textContent = '❌ 下载失败：' + err.message;
+      prog.style.display = 'none';
+    });
+}
+</script>
+</body>
+</html>

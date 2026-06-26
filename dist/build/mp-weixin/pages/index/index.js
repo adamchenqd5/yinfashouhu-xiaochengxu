@@ -1,0 +1,1 @@
+"use strict";const e=require("../../common/vendor.js"),t={methods:{startGame(){e.index.navigateTo({url:"/pages/select/select"})}}};const a=e._export_sfc(t,[["render",function(t,a,r,s,c,o){return{a:e.o((...e)=>o.startGame&&o.startGame(...e),"47")}}],["__scopeId","data-v-ba8c0d96"]]);wx.createPage(a);
