@@ -40,7 +40,7 @@ export default {
   methods: {
     startScene(cid) {
       uni.navigateTo({
-        url: `/pages/game/game?cid=${cid}`
+        url: `/pages/chat/chat?cid=${cid}`
       })
     }
   }

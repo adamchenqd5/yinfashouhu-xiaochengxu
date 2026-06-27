@@ -15,7 +15,7 @@
 			}
 		},
 		{
-			"path": "pages/game/game",
+			"path": "pages/chat/chat",
 			"style": {
 				"navigationBarTitleText": "对话中",
 				"navigationBarBackgroundColor": "#EDEDED"

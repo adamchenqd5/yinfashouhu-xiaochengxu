@@ -1,34 +1,13 @@
 {
-  "description": "银发守护者-老年人防诈骗聊天模拟器",
-  "packOptions": {
-    "ignore": []
-  },
+  "description": "银发守护者",
+  "packOptions": { "ignore": [] },
   "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "postcss": false,
-    "minified": true,
-    "newFeature": true,
-    "bigPackageSizeSupport": true,
-    "enhance": true,
-    "showShadowRootInWxmlPanel": true
+    "urlCheck": false, "es6": true, "postcss": false,
+    "minified": true, "newFeature": true,
+    "bigPackageSizeSupport": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.30.0",
   "appid": "wx12caf2c75b485ad2",
-  "projectname": "银发守护者",
-  "miniprogramRoot": "./",
-  "condition": {
-    "miniprogram": {
-      "current": 0,
-      "list": [
-        {
-          "name": "首页",
-          "pathName": "pages/index/index",
-          "query": "",
-          "scene": null
-        }
-      ]
-    }
-  }
+  "projectname": "银发守护者"
 }
