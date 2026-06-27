@@ -1,5 +1,5 @@
 {
-  "description": "项目配置文件。",
+  "description": "银发守护者-老年人防诈骗聊天模拟器",
   "packOptions": {
     "ignore": []
   },
@@ -9,29 +9,26 @@
     "postcss": false,
     "minified": true,
     "newFeature": true,
-    "bigPackageSizeSupport": true
+    "bigPackageSizeSupport": true,
+    "enhance": true,
+    "showShadowRootInWxmlPanel": true
   },
   "compileType": "miniprogram",
-  "libVersion": "",
+  "libVersion": "2.30.0",
   "appid": "wx12caf2c75b485ad2",
   "projectname": "银发守护者",
   "miniprogramRoot": "./",
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "current": -1,
-      "list": []
-    },
     "miniprogram": {
-      "current": -1,
-      "list": []
+      "current": 0,
+      "list": [
+        {
+          "name": "首页",
+          "path": "pages/index/index",
+          "query": "",
+          "scene": null
+        }
+      ]
     }
   }
 }
