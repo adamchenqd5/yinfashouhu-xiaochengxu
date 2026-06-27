@@ -1,6 +1,6 @@
 {
     "name" : "银发守护者",
-    "appid" : "wx12caf2c75b485ad2",
+    "appid" : "wx03b9dcb19055f27d",
     "description" : "老年人防诈骗聊天模拟器 - 通过对话模拟帮助老年人识别各类诈骗手段",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -50,7 +50,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx12caf2c75b485ad2",
+        "appid" : "wx03b9dcb19055f27d",
         "setting" : {
             "urlCheck" : false,
             "es6": true,
