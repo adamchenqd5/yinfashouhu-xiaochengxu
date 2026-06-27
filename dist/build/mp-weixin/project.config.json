@@ -15,6 +15,7 @@
   "libVersion": "",
   "appid": "wx12caf2c75b485ad2",
   "projectname": "银发守护者",
+  "miniprogramRoot": "./",
   "condition": {
     "search": {
       "current": -1,
