@@ -24,7 +24,7 @@
       "list": [
         {
           "name": "首页",
-          "path": "pages/index/index",
+          "pathName": "pages/index/index",
           "query": "",
           "scene": null
         }
