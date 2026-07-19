@@ -32,6 +32,13 @@
         <text class="share-text">分享给亲友</text>
       </button>
 
+      <view class="feedback-row">
+        <button class="feedback-btn" open-type="contact">
+          <text class="feedback-icon">💬</text>
+          <text class="feedback-text">意见反馈</text>
+        </button>
+      </view>
+
       <text class="warning">⚠️ 本游戏基于真实诈骗案例改编，仅供反诈教育用途。记住核心原则：不轻信、不贪利、不转账！</text>
     </view>
   </view>
@@ -171,6 +178,36 @@ export default {
 }
 
 .share-text {
+  font-weight: 500;
+}
+
+.feedback-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36rpx;
+}
+
+.feedback-btn {
+  background: transparent;
+  color: #FFC107;
+  padding: 20rpx 40rpx;
+  border: 2rpx solid rgba(255,193,7,0.4);
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.feedback-btn:active {
+  background: rgba(255,193,7,0.1);
+}
+
+.feedback-icon {
+  font-size: 30rpx;
+}
+
+.feedback-text {
   font-weight: 500;
 }
 
