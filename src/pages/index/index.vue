@@ -27,6 +27,11 @@
 
       <button class="start-btn" @click="startGame">开始挑战</button>
 
+      <button class="share-btn" open-type="share">
+        <text class="share-icon">📤</text>
+        <text class="share-text">分享给亲友</text>
+      </button>
+
       <text class="warning">⚠️ 本游戏基于真实诈骗案例改编，仅供反诈教育用途。记住核心原则：不轻信、不贪利、不转账！</text>
     </view>
   </view>
@@ -140,6 +145,33 @@ export default {
 
 .start-btn:active {
   background: #06AD56;
+}
+
+.share-btn {
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+  padding: 28rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255,255,255,0.3);
+  font-size: 36rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  margin-bottom: 36rpx;
+}
+
+.share-btn:active {
+  background: rgba(255,255,255,0.25);
+}
+
+.share-icon {
+  font-size: 36rpx;
+}
+
+.share-text {
+  font-weight: 500;
 }
 
 .warning {
