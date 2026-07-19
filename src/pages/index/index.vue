@@ -34,6 +34,17 @@
 
 <script>
 export default {
+  onShareAppMessage() {
+    return {
+      title: '银发守护者 - 老年人防诈骗聊天模拟器，帮爸妈识破骗局！',
+      path: '/pages/index/index'
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: '银发守护者 - 老年人防诈骗聊天模拟器，帮爸妈识破骗局！'
+    }
+  },
   methods: {
     startGame() {
       uni.navigateTo({ url: '/pages/select/select' })

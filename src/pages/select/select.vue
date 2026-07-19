@@ -32,6 +32,17 @@
 import SCENES from '@/data/scenes.js'
 
 export default {
+  onShareAppMessage() {
+    return {
+      title: '银发守护者 - 这些诈骗套路你爸妈能识破吗？',
+      path: '/pages/index/index'
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: '银发守护者 - 这些诈骗套路你爸妈能识破吗？'
+    }
+  },
   data() {
     return {
       scenes: SCENES

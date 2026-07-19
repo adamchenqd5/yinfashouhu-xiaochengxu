@@ -129,6 +129,17 @@ import SCENES from '@/data/scenes.js'
 import ROUNDS from '@/data/rounds.js'
 
 export default {
+  onShareAppMessage() {
+    return {
+      title: '银发守护者 - 我正在挑战「' + (this.scene.name || '防诈骗') + '」场景，快来帮爸妈识破骗局！',
+      path: '/pages/index/index'
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: '银发守护者 - 帮爸妈识破骗局！'
+    }
+  },
   data() {
     return {
       scene: {},
