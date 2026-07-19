@@ -27,5 +27,6 @@
 		"navigationBarTitleText": "银发守护者",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
-	}
+	},
+	"lazyCodeLoading": "requiredComponents"
 }
